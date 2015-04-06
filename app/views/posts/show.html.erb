@@ -1,14 +1,15 @@
-<h1>Line-up:</h1>
+<h1 class="header">Line-up:</h1>
 
-<ol>
+<ul>
   <% @posts.each do |post| %>
     <li class="list">
       <%= post.joke %>
       <br><%= post.image %>
     </li>
+    <hr>
   <% end %>
-</ol>
+</ul>
 
 <div class="text-center">
-	<%= link_to "New post", new_post_path, class:"btn btn-default text-center" %>
+	<%= link_to "New post", new_post_path, class:"btn btn-default" %>
 </div>
