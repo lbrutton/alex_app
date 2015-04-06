@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406171521) do
+ActiveRecord::Schema.define(version: 20150406180412) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name"
@@ -25,9 +25,11 @@ ActiveRecord::Schema.define(version: 20150406171521) do
     t.string   "joke"
     t.string   "answer"
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.date     "date"
+    t.string   "start_color"
+    t.string   "end_color"
   end
 
 end

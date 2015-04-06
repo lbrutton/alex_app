@@ -1,24 +1,26 @@
-<h1 class="header">
-	<%= content_tag :div, @first_post.joke, id:'joke', onclick:'changeJoke()'%>
-	<%= content_tag :div, @first_post.answer, id:'answer', onclick:'changeJoke()'%>
-</h1>
-<hr>
-	<%= image_tag @first_post.image, class:"image" %>
-<hr>
-<script>
-	j = true;
-	function changeJoke(){
-		if (j == true){
-			document.getElementById("joke").setAttribute("style", "display: none;");
-			document.getElementById("answer").setAttribute("style", "display: block;");
-			j = false
+<div style="background-color:<%=@start_color%>">
+	<h1 class="header">
+		<%= content_tag :div, @first_post.joke, id:'joke', onclick:'changeJoke()'%>
+		<%= content_tag :div, @first_post.answer, id:'answer', onclick:'changeJoke()'%>
+	</h1>
+	<hr>
+		<%= image_tag @first_post.image, class:"image" %>
+	<hr>
+	<script>
+		j = true;
+		function changeJoke(){
+			if (j == true){
+				document.getElementById("joke").setAttribute("style", "display: none;");
+				document.getElementById("answer").setAttribute("style", "display: block;");
+				j = false
+			}
+			else {
+				document.getElementById("joke").setAttribute("style", "display: block;");
+				document.getElementById("answer").setAttribute("style", "display: none;");
+				j = true;
+			}	
 		}
-		else {
-			document.getElementById("joke").setAttribute("style", "display: block;");
-			document.getElementById("answer").setAttribute("style", "display: none;");
-			j = true;
-		}	
-	}
-</script>
+	</script>
+</div>
 
 
