@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'show_posts' => 'posts#show'
   get 'new_post'  => 'posts#new'
   post 'posts' => 'posts#create'
+  delete 'delete_post' => 'posts#destroy'
 
   get 'posts/show'
 

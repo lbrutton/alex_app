@@ -10,6 +10,11 @@ class PostsController < ApplicationController
 		@post = Post.new
 	end
 
+	def destroy
+		@post = Post.find(params[:id]).destroy
+		redirect_to show_posts_path
+	end
+
 	def create
 		@post = Post.new(post_params)
 		if @post.save
