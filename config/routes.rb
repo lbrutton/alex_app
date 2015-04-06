@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  get 'show_posts' => 'posts#show'
+  get 'new_post'  => 'posts#new'
+  post 'posts' => 'posts#create'
+
+  get 'posts/show'
 
   get 'static_pages/home'
 

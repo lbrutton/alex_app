@@ -1,0 +1,19 @@
+<h1 class="header">New post motherfucker</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@post) do |f| %>
+      <%= f.label :joke %>
+      <%= f.text_field :joke %>
+
+      <%= f.label :answer %>
+      <%= f.text_field :answer %>
+
+      <%= f.label :image %>
+      <%= f.text_field :image %>
+      <div class="text-center">
+      	<%= f.submit "Post dat shit", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<h1>Line-up:</h1>
+
+<ol>
+  <% @posts.each do |post| %>
+    <li class="list">
+      <%= post.joke %>
+      <br><%= post.image %>
+    </li>
+  <% end %>
+</ol>
+
+<div class="text-center">
+	<%= link_to "New post", new_post_path, class:"btn btn-default text-center" %>
+</div>
