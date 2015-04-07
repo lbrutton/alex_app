@@ -1,9 +1,11 @@
 <% if @first_post != nil %>
 	<div style="background-color:<%=@start_color%>">
-		<h1 class="header">
-			<%= content_tag :div, @first_post.joke, id:'joke', onclick:'changeJoke()'%>
-			<%= content_tag :div, @first_post.answer, id:'answer', onclick:'changeJoke()'%>
-		</h1>
+		<div class="joke-container">
+			<h1 class="header">
+				<%= content_tag :div, @first_post.joke, id:'joke', onclick:'changeJoke()'%>
+				<%= content_tag :div, @first_post.answer, id:'answer', onclick:'changeJoke()'%>
+			</h1>
+		</div>
 		<hr>
 			<%= image_tag @first_post.image, class:"image" %>
 		<hr>
