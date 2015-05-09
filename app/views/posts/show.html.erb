@@ -4,9 +4,13 @@
   <% @posts.each do |post| %>
     <li class="list">
       <%= post.joke %>
-      <br><%= post.image %>
-      <br><%= post.date %>
-      <br><%= link_to 'edit', '#' %> <%= link_to 'delete', delete_post_path, method: :delete, data: {confirm: 'Bist du sicher?'} %>
+      <br>
+      <%= post.image %>
+      <br>
+      <%= post.date %>
+      <br>
+      <%= link_to 'edit', '#' %> 
+      <%= link_to "delete", post_path(post), method: :delete, data: { confirm: 'Bist du sicher?' } %>
     </li>
     <hr>
   <% end %>

@@ -1,4 +1,17 @@
 class PostsController < ApplicationController
+	def index
+  	if Post.where(date: Date.today).first != nil
+	  	@first_post = Post.where(date: Date.today).first
+	  	if @first_post.start_color != nil
+	  		@start_color = @first_post.start_color
+	  	else
+	  		@start_color = "#ffffff"
+	  	end
+		else
+			@first_post = nil
+		end
+  end
+
 	def show
 		@posts = Post.all
 	end
@@ -11,14 +24,15 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
-		@post = Post.find(params[:id]).destroy
-		redirect_to show_posts_path
+		@post = Post.find(params[:id])
+		@post.destroy
+		redirect_to show_posts_url
 	end
 
 	def create
 		@post = Post.new(post_params)
 		if @post.save
-			redirect_to show_posts_path
+			redirect_to posts_url
 		else
 			render 'new'
 		end
