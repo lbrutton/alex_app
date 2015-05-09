@@ -7,12 +7,12 @@ class StaticPagesController < ApplicationController
 	  	else
 	  		@start_color = "#ffffff"
 	  	end
-	else
-		@first_post = nil
-	end
-
+		else
+			@first_post = nil
+		end
   end
 
   def help
+
   end
 end
