@@ -10,13 +10,14 @@ class PostsController < ApplicationController
 		else
 			@first_post = nil
 		end
-  end
+  	end
 
 	def show
 		@posts = Post.all
 	end
 
 	def edit
+		@post = Post.find(params[:id])
 	end
 
 	def new
@@ -37,6 +38,14 @@ class PostsController < ApplicationController
 			render 'new'
 		end
 	end
+
+	def update
+		@post = Post.find(params[:id])
+		@post.update(post_params)
+		redirect_to show_posts_url
+	end
+
+
 
 	private
 

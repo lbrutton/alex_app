@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :posts
   
   get "show_posts" => 'posts#show'
+  
 end

@@ -9,7 +9,7 @@
       <br>
       <%= post.date %>
       <br>
-      <%= link_to 'edit', '#' %> 
+      <%= link_to 'edit', edit_post_path(post) %> 
       <%= link_to "delete", post_path(post), method: :delete, data: { confirm: 'Bist du sicher?' } %>
     </li>
     <hr>

@@ -1,0 +1,34 @@
+<h1 class="header">Update your post motherfucker</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@post) do |f| %>
+      <%= f.label :joke, class:"form" %>
+      <%= f.text_field :joke, class:"form_field" %>
+
+      <br>
+
+      <%= f.label :answer, class:"form" %>
+      <%= f.text_field :answer, class:"form_field" %>
+
+      <br>
+
+      <%= f.label :image, class:"form" %>
+      <%= f.text_field :image, class:"form_field"  %>
+
+      <br>
+
+      <%= f.label :date, class:"form" %>
+      <%= f.date_field :date, class:"form_field"  %>
+
+      <br>
+
+      <%= f.label :start_color, class:"form" %>
+      <%= f.text_field :start_color, class:"form_field"  %>
+
+      <div class="text-center">
+      	<%= f.submit "Post dat shit", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
