@@ -1,21 +1,36 @@
-<h1 class="header">Line-up:</h1>
 
-<ul>
-  <% @posts.each do |post| %>
-    <li class="list">
-      <%= post.joke %>
-      <br>
-      <%= post.image %>
-      <br>
-      <%= post.date %>
-      <br>
-      <%= link_to 'edit', edit_post_path(post) %> 
-      <%= link_to "delete", post_path(post), method: :delete, data: { confirm: 'Bist du sicher?' } %>
-    </li>
+<% if @first_post != nil %>
+  <div style="background-color:<%=@start_color%>">
+    <div class="joke-container">
+      <h1 class="header">
+        <%= content_tag :div, @first_post.joke, id:'joke', onclick:'changeJoke()'%>
+        <%= content_tag :div, @first_post.answer, id:'answer', onclick:'changeJoke()'%>
+      </h1>
+    </div>
     <hr>
-  <% end %>
-</ul>
-
-<div class="text-center">
-	<%= link_to "New post", new_post_path, class:"btn btn-default" %>
-</div>
+      <%= image_tag @first_post.image, class:"image" %>
+    <hr>
+    <script>
+      j = true;
+      function changeJoke(){
+        if (j == true){
+          document.getElementById("joke").setAttribute("style", "display: none;");
+          document.getElementById("answer").setAttribute("style", "display: block;");
+          j = false;
+        } else {
+          document.getElementById("joke").setAttribute("style", "display: block;");
+          document.getElementById("answer").setAttribute("style", "display: none;");
+          j = true;
+        } 
+      }
+    </script>
+  </div>
+<% else %>
+  <h1 class="header"> 
+    No posts yet for today...
+  </h1>
+  <div class="text-center">
+    <%= link_to "Click here if you're Alex", login_path, class:"btn btn-default" %>
+  </div>
+  <h1> Otherwise FOCKOFF. </h1>
+<% end %>

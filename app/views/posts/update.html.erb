@@ -2,7 +2,9 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@post) do |f| %>
+    <%= render 'form' %>
+
+    <!-- <%= form_for(@post) do |f| %>
       <%= f.label :joke, class:"form" %>
       <%= f.text_field :joke, class:"form_field" %>
 
@@ -29,6 +31,6 @@
       <div class="text-center">
       	<%= f.submit "Post dat shit", class: "btn btn-primary" %>
       </div>
-    <% end %>
+    <% end %> -->
   </div>
 </div>

@@ -1,5 +1,10 @@
 class PostsController < ApplicationController
+
 	def index
+		@posts = Post.all
+  end
+
+	def show
   	if Post.where(date: Date.today).first != nil
 	  	@first_post = Post.where(date: Date.today).first
 	  	if @first_post.start_color != nil
@@ -10,24 +15,10 @@ class PostsController < ApplicationController
 		else
 			@first_post = nil
 		end
-  	end
-
-	def show
-		@posts = Post.all
-	end
-
-	def edit
-		@post = Post.find(params[:id])
 	end
 
 	def new
 		@post = Post.new
-	end
-
-	def destroy
-		@post = Post.find(params[:id])
-		@post.destroy
-		redirect_to show_posts_url
 	end
 
 	def create
@@ -39,15 +30,23 @@ class PostsController < ApplicationController
 		end
 	end
 
+	def edit
+		@post = Post.find(params[:id])
+	end
+
 	def update
 		@post = Post.find(params[:id])
 		@post.update(post_params)
-		redirect_to show_posts_url
+		redirect_to posts_url
 	end
 
+	def destroy
+		@post = Post.find(params[:id])
+		@post.destroy
+		redirect_to posts_url
+	end
 
-
-	private
+private
 
 	def post_params
 		params.require(:post).permit(:joke, :answer, :image, :date, :start_color)
