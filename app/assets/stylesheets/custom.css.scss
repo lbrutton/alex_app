@@ -2,56 +2,66 @@
 @import "bootstrap";
 
 .header{
-	text-align: center;
-	padding: 0 5% 0 5%;
+	text-align:center;
+	padding:0 5% 0 5%
 }
 
 body{
-	font-family: HelveticaNeue-Light;
+	background-image:url("sandpaper.png");
+	font-family:HelveticaNeue-Light
 }
 
 .list{
-	text-overflow: ellipsis;
-	overflow: hidden;
+	text-overflow:ellipsis;
+	overflow:hidden
+}
+
+.frame-container{
+	background-image:url("notebook_2x.png");
+	text-align:center;
+	width:95%;
+	margin:0 auto;
+	border:1px solid silver
 }
 
 .image{
-	max-width: 84%;
-	margin-left: 8%;
+	border-radius:10px;
+	max-width:92%;
+	margin:3% 0
 }
 
 .joke:link{
-	text-decoration: none;
-	color:black;
+	text-decoration:none;
+	color:black
 }
 
 #joke{
-	color:black;
+	color:black
 }
 
 #answer{
-	display:none;
+	display:none
 }
 
 .text-center{
-	padding: 4% 0 2% 0;
+	padding:4% 0 2% 0
 }
 
 .row{
-	padding:4%;
+	padding:4%
 }
 
 .form{
-	font-weight: normal;
-	padding: 2% 0 2% 0;
-	width: 20%;
+	font-weight:normal;
+	padding:2% 0 2% 0;
+	width:20%
 }
 
 .form_field{
-	width: 75%;
+	width:75%
 }
 
 ul{
 	margin-top:5%;
-	padding-left:4%;
+	padding-left:4%
 }
