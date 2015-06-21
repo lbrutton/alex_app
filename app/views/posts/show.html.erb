@@ -8,29 +8,36 @@
       </h1>
     </div>
     <hr>
-      <%= image_tag @first_post.image, class:"image" %>
+      <div class="frame-container">
+        <%= image_tag @first_post.image, class:"image" %>
+      </div>
     <hr>
     <script>
       j = true;
+      var joke = document.getElementById("joke");
+      var answer = document.getElementById("answer");
       function changeJoke(){
         if (j == true){
-          document.getElementById("joke").setAttribute("style", "display: none;");
-          document.getElementById("answer").setAttribute("style", "display: block;");
+          joke.setAttribute("style", "display: none;");
+          answer.setAttribute("style", "display: block;");
           j = false;
         } else {
-          document.getElementById("joke").setAttribute("style", "display: block;");
-          document.getElementById("answer").setAttribute("style", "display: none;");
+          joke.setAttribute("style", "display: block;");
+          answer.setAttribute("style", "display: none;");
           j = true;
         } 
       }
     </script>
+  </div>
+  <div class="text-center">
+    <%= link_to "Click here if you're Alex", posts_path, class:"btn btn-default" %>
   </div>
 <% else %>
   <h1 class="header"> 
     No posts yet for today...
   </h1>
   <div class="text-center">
-    <%= link_to "Click here if you're Alex", login_path, class:"btn btn-default" %>
+    <%= link_to "Click here if you're Alex", posts_path, class:"btn btn-default" %>
   </div>
   <h1> Otherwise FOCKOFF. </h1>
 <% end %>
