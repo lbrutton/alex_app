@@ -29,9 +29,6 @@
       }
     </script>
   </div>
-  <div class="text-center">
-    <%= link_to "Click here if you're Alex", posts_path, class:"btn btn-default" %>
-  </div>
 <% else %>
   <h1 class="header"> 
     No posts yet for today...
@@ -41,7 +38,4 @@
       <%= image_tag "no_posts.jpg", class:"image" %>
     </div>
   <hr>
-  <div class="text-center">
-    <%= link_to "Click here if you're Alex", posts_path, class:"btn btn-default" %>
-  </div>
 <% end %>
