@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.minicolors
+jQuery( function($) {
+    $(".colorpicker").minicolors()
+});
+//= require bootstrap-colorpicker
+//= require jquery-colorpicker
 //= require_tree .

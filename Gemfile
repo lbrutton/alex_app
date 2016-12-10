@@ -10,6 +10,11 @@ gem 'turbolinks',   '2.3.0'
 gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :doc
 gem 'devise'
+gem 'jquery-minicolors-rails'
+gem 'simple_form'
+gem 'jquery-ui-rails'
+gem 'bootstrap_colorpicker_rails'
+gem 'carrierwave', '~> 0.9'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'

@@ -6,14 +6,24 @@
   <%= f.text_field :answer, class:"form_field" %>
   <br>
   <%= f.label :image, class:"form" %>
-  <%= f.text_field :image, class:"form_field"  %>
+  <%= f.file_field :image, class:"form_field"  %>
   <br>
   <%= f.label :date, class:"form" %>
   <%= f.date_field :date, class:"form_field"  %>
   <br>
   <%= f.label :start_color, class:"form" %>
-  <%= f.text_field :start_color, class:"form_field"  %>
+  <%= f.text_field :start_color, class:"form_field" %>
   <div class="text-center">
   	<%= f.submit "Post dat shit", class: "btn btn-primary" %>
   </div>
 <% end %>
+
+<div class="container">
+Color code picker:
+<input class='colorpicker'>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.colorpicker').colorpicker();
+  })
+</script>
+</div>

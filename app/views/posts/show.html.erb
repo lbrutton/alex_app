@@ -1,6 +1,5 @@
 
 <% if @first_post != nil %>
-  <div style="background-color:<%=@start_color%>">
     <div class="joke-container">
       <h1 class="header">
         <%= content_tag :div, @first_post.joke, id:'joke', onclick:'changeJoke()'%>
@@ -29,6 +28,7 @@
       }
     </script>
   </div>
+  <div class="facebook-share"><%= image_tag "other.gif", class:"image" %></div>
 <% else %>
   <h1 class="header"> 
     No posts yet for today...
