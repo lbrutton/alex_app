@@ -1,3 +1,4 @@
+
 <%= form_for(@post) do |f| %>
   <%= f.label :joke, class:"form" %>
   <%= f.text_field :joke, class:"form_field" %>
@@ -12,18 +13,8 @@
   <%= f.date_field :date, class:"form_field"  %>
   <br>
   <%= f.label :start_color, class:"form" %>
-  <%= f.text_field :start_color, class:"form_field" %>
+  <%= f.text_field :start_color, class:"colorpicker" %>
   <div class="text-center">
   	<%= f.submit "Post dat shit", class: "btn btn-primary" %>
   </div>
 <% end %>
-
-<div class="container">
-Color code picker:
-<input class='colorpicker'>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('.colorpicker').colorpicker();
-  })
-</script>
-</div>
